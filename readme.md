@@ -46,8 +46,8 @@ This project provides a FastAPI application for managing and analyzing stock mar
 1.  **Clone the Repository (if applicable):**
 
     ```bash
-    git clone <your-repository-url>
-    cd <your-repository-name>
+    git clone https://github.com/Noel9907/invsto-backend
+    cd https://github.com/Noel9907/invsto-backend
     ```
 
 2.  **Place `data.xlsx` and `init_db.sql`:**
