@@ -159,6 +159,27 @@ class TestDataEndpointInputValidation(unittest.TestCase):
         
         response = self.client.post("/data", json=invalid_data)
         self.assertEqual(response.status_code, 422)
+    @patch('main.get_connection')
+    def test_valid_data_insertion(self, mock_get_connection):
+        """Test successful data insertion"""
+        mock_conn = Mock()
+        mock_cursor = Mock()
+        mock_get_connection.return_value = mock_conn
+        mock_conn.cursor.return_value = mock_cursor
+
+        valid_data = {
+            "datetime": "2023-01-01T09:30:00",
+            "open": 100.50,
+            "high": 105.75,
+            "low": 99.25,
+            "close": 103.00,
+            "volume": 1000000
+        }
+
+        response = self.client.post("/data", json=valid_data)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), {"message": "Stock data added successfully"})
+        mock_cursor.execute.assert_called_once()
     
     @patch('main.get_connection')
     def test_invalid_volume_type(self, mock_get_connection):
