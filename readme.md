@@ -10,7 +10,6 @@ This project provides a FastAPI application for managing and analyzing stock mar
 - **Database Initialization**:
   - Populate the `stock_data` table from a CSV file (`data.xlsx`).
   - Handles data cleaning, type conversion, and duplicate entries.
-  - You can use "/init" endpoint
 - **Moving Average Strategy Performance**:
   - Calculate the performance of a simple moving average crossover strategy.
   - Provides insights into buy/sell signals, total trades, and cumulative returns.
@@ -32,7 +31,7 @@ This project provides a FastAPI application for managing and analyzing stock mar
 - `db.py`: Contains database connection and session management logic using SQLAlchemy.
 - `test_stock_api.py`: Unit tests for the API endpoints and data models.
 - `init_db.sql`: SQL script for initial database table creation.
-- `data.xlsx - HINDALCO.csv`: CSV file containing stock data for initialization.
+- `data.xlsx`: file containing stock data for initialization.
 - `requirements.txt`: Lists Python dependencies.
 
 ## Setup and Running
@@ -50,12 +49,7 @@ This project provides a FastAPI application for managing and analyzing stock mar
     cd https://github.com/Noel9907/invsto-backend
     ```
 
-2.  **Place `data.xlsx` and `init_db.sql`:**
-
-    - Ensure you have the `data.xlsx` file in the root directory. This will be mounted into the Docker container.
-    - Ensure you have the `init_db.sql` file in the root directory. This will be used to initialize the PostgreSQL database.
-
-3.  **Build and Run with Docker Compose:**
+2.  **Build and Run with Docker Compose:**
     Navigate to the root directory of the project where `docker-compose.yml` is located and run:
 
     ```bash
