@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS stock_data (
+    id SERIAL PRIMARY KEY,
+    datetime TIMESTAMP UNIQUE NOT NULL,
+    open DECIMAL NOT NULL,
+    high DECIMAL NOT NULL,
+    low DECIMAL NOT NULL,
+    close DECIMAL NOT NULL,
+    volume INTEGER NOT NULL
+);
